@@ -1,0 +1,271 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://green.res" type="Theme" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/Hack-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/Hack-Italic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/Hack-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/Hack-BoldItalic.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://addons/nicense/nicense_button.gd" type="Script" id=8]
+[ext_resource path="res://back_button_dance1.anim" type="Animation" id=9]
+[ext_resource path="res://text_spin1.anim" type="Animation" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Menus/About/RichTextLabel:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Menus/About/RichTextLabel/back_button:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Back" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Menus/About/RichTextLabel/back_button:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Menus/About/RichTextLabel/back_button:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -23.3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Menus/About/RichTextLabel/back_button:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1024.71, 60 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Menus/About/RichTextLabel/back_button:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 558 ) ]
+}
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -253.0
+margin_right = 192.0
+margin_bottom = 253.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start Game" type="Button" parent="Panel/GridContainer"]
+margin_right = 384.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Start Game"
+expand_icon = true
+
+[node name="Settings" type="Button" parent="Panel/GridContainer"]
+margin_top = 127.0
+margin_right = 384.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Settings"
+expand_icon = true
+
+[node name="About" type="Button" parent="Panel/GridContainer"]
+margin_top = 254.0
+margin_right = 384.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "About.."
+expand_icon = true
+
+[node name="Exit" type="Button" parent="Panel/GridContainer"]
+margin_top = 381.0
+margin_right = 384.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Exit"
+expand_icon = true
+
+[node name="Menus" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Control" parent="Menus"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menus/About"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.709961
+custom_fonts/mono_font = SubResource( 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "
+[b][i]Written in C# (C-sharp), GDScript and Python3[/i][/b]
+
+Created by [color=red]Andrew[/color] [color=blue]Poženel[/color] [b]A.K.A.[/b]  [wave amp=50 freq=2][tornado radius=5 freq=2][shake rate=5 level=10][rainbow freq=0.2 sat=10 val=20] SloDevTeam[/rainbow][/shake][/tornado][/wave] or [wave amp=50 freq=2][tornado radius=5 freq=2][shake rate=5 level=10][rainbow freq=0.2 sat=10 val=20] .:VOID:.[/rainbow][/shake][/tornado][/wave]
+
+
+[i]For more info visit:[/i]
+
+
+
+[url=https://www.facebook.com/AndrewPozenel]Facebook[/url]
+[url=https://twitter.com/executable0053]Twitter[/url]
+[url=https://github.com/anderlli0053]GitHub[/url]
+[url=https://slo-dev-team.000webhostapp.com]Website[/url]"
+text = "
+Written in C# (C-sharp), GDScript and Python3
+
+Created by Andrew Poženel A.K.A.   SloDevTeam or  .:VOID:.
+
+
+For more info visit:
+
+
+
+Facebook
+Twitter
+GitHub
+Website"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NicenseButton" type="Button" parent="Menus/About/RichTextLabel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -202.0
+margin_bottom = 27.0
+theme = ExtResource( 1 )
+text = "Show Copyright Info"
+expand_icon = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="Button" parent="Menus/About/RichTextLabel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -42.0
+margin_bottom = 18.0
+rect_rotation = -23.3
+text = "Back"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
+anims/RESET = SubResource( 5 )
+anims/back_button_dance1 = ExtResource( 9 )
+anims/text_spin1 = ExtResource( 10 )
+
+[connection signal="pressed" from="Panel/GridContainer/About" to="." method="_on_About_button_pressed" flags=3]
+[connection signal="pressed" from="Panel/GridContainer/Exit" to="." method="_on_Exit_button_pressed" flags=7]
+[connection signal="meta_clicked" from="Menus/About/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked" flags=3]
+[connection signal="meta_hover_ended" from="Menus/About/RichTextLabel" to="." method="_on_RichTextLabel_meta_hover_ended" flags=3]
+[connection signal="meta_hover_started" from="Menus/About/RichTextLabel" to="." method="_on_RichTextLabel_meta_hover_started" flags=3]
+[connection signal="pressed" from="Menus/About/RichTextLabel/back_button" to="." method="_on_back_button_pressed" flags=3]
